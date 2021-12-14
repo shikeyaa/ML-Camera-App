@@ -14,3 +14,21 @@ An Android App that uses Machine Learning (ML) to recognize the objects in an im
 Machine Learning
 -----------
 Machine learning (ML) is a software development method that gives your apps the ability to mechanically learn and enhance from experience without being clearly programmed to do so. Machine Learning is all about distinguishing and identifying patterns such as images, texts, car traffic, and language translations.  
+
+Demo
+--------
+
+
+Tech
+------
+• Android Studio
+
+• Kotlin
+
+• Machine Learning
+
+Resources
+---------
+•  https://developer.android.com/training/camera/photobasics
+
+• https://developers.google.com/ml-kit/vision/image-labeling/android
