@@ -17,7 +17,7 @@ Machine learning (ML) is a software development method that gives your apps the 
 
 Demo
 --------
-
+![ML Camera GIF1](https://user-images.githubusercontent.com/59205692/146061633-8bc8a01b-ca3d-4472-90ab-278fdad20601.gif)
 
 Tech
 ------
@@ -30,5 +30,6 @@ Tech
 Resources
 ---------
 •  https://developer.android.com/training/camera/photobasics
+
 
 • https://developers.google.com/ml-kit/vision/image-labeling/android
