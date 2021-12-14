@@ -3,12 +3,13 @@ package com.example.mlcameraapp
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.label.ImageLabeling
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //Create a button that launches the camera app
-        findViewById<Button>(R.id.button).setOnClickListener {
+        findViewById<ImageButton>(R.id.button).setOnClickListener {
             //launch camera app
             //create intent that launches the camera and takes a picture
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             //Utilize image Labeling API
             val labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS)
             //pass image
+            var oPtext = " "
             labeler.process(imageForMLKit)
                 .addOnSuccessListener { labels ->
                     Log.i("Keya", "Successfuly processed image" )
@@ -54,14 +56,15 @@ class MainActivity : AppCompatActivity() {
                         val text = label.text
                         //The confidence score of what was detected
                         val confidence = label.confidence
+                        val textView = findViewById<TextView>(R.id.textView)
+                        oPtext += "$text : $confidence %\n"
+                        textView.text = oPtext
                         Log.i("Keya", "detected: " + text + " with confidence:" + confidence)
                     }
                 }
                 .addOnFailureListener { e ->
                     Log.e("Keya", "Error processing image")
                 }
-
-            //Add code to use different API 58:00 mins
         }
     }
 }

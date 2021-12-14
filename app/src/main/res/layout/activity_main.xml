@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
 
-    <Button
+    <ImageButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="176dp"
         android:text="Open Camera"
+        app:srcCompat="@drawable/cameraeye"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -20,8 +23,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="408dp"
-        android:layout_height="379dp"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -30,5 +33,31 @@
         app:layout_constraintVertical_bias="0.646"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <ScrollView
+        android:layout_width="205dp"
+        android:layout_height="157dp"
+        android:layout_marginEnd="84dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.789">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="20"
+            android:maxLines="5"
+            android:minLines="2"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"
+            android:singleLine="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
